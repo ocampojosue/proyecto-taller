@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     {
         $randomNum = Str::random(4);
         User::create([
-            'name' => 'Administrador',
+            'name' => 'Josué Ocampo',
             'username' => 'UEY' . $randomNum,
             'email' => 'sistema.multimedia@uajms.com',
             'email_verified_at' => now(),
