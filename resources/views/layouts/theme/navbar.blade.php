@@ -10,8 +10,8 @@
             </svg></a>
 
          <div class="nav-logo align-self-center">
-            <a class="navbar-brand" href="index.html"><img alt="logo" src="assets/img/90x90.jpg"> <span
-                  class="navbar-brand-name">CORK</span></a>
+            <a class="navbar-brand" href="index.html"><img alt="logo" src="{{asset("escudo.png")}}"> <span
+                  class="navbar-brand-name">U. E .Y.</span></a>
          </div>
 
          <ul class="navbar-item flex-row mr-auto">
@@ -321,15 +321,20 @@
                      </a>
                   </div>
                   <div class="dropdown-item">
-                     <a href="auth_login.html">
+                     <a href="{{route("logout")}}"
+                     onclick="event.preventDefault();
+                     document.getElementById('logout-form'). submit();">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                            class="feather feather-log-out">
                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                            <polyline points="16 17 21 12 16 7"></polyline>
                            <line x1="21" y1="12" x2="9" y2="12"></line>
-                        </svg> <span>Log Out</span>
+                        </svg> <span>Cerrar Sesión</span>
                      </a>
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                     </form>
                   </div>
                </div>
             </li>
